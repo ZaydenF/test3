@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+{% block title %}Result - Clicker Game{% endblock %}
+
+{% block extra_styles %}
+
+{% endblock %}
+
+{% block content %}
+<div id="result">
+    <h1>Game Over!</h1>
+    <p>You reached 52 clicks in <span id="finalTime">{{ time }}</span> seconds.</p>
+    <form action="/submit_score" method="post">
+        <input type="text" name="name" placeholder="Enter your name" required>
+        <button type="submit">Submit Score</button>
+    </form>
+    <a href="/game">Play Again</a>
+</div>
+{% endblock %}
+
